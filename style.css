@@ -16,3 +16,12 @@ body {
 .money-img {
   width: 150px;
 }
+
+h1 {
+  color: #5fbaa7;
+  padding: 20px 0;
+}
+
+p {
+  padding: 10px 0;
+}
