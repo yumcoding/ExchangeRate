@@ -7,6 +7,18 @@ const amountTwo = document.getElementById("amount-two");
 const swapBtn = document.getElementById("swap");
 const rateDiv = document.getElementById("rate");
 
+function calculate() {
+  const currencyOneValue = currencyOne.value;
+  const currencyTwoValue = currencyTwo.value;
+
+  fetch(`https://api.exchangerate-api.com/v4/latest/${currencyOneValue}`)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+      const rate = data.rates[currencyTwoValue];
+      rateDiv.innerHTML = `1 ${currencyOneValue} = ${rate} ${currencyTwoValue} `;
+    });
+}
 //  EventListeners
 
 currencyOne.addEventListener("change", calculate);
