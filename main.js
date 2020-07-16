@@ -20,9 +20,18 @@ function calculate() {
       amountTwo.value = (amountOne.value * rate).toFixed(2);
     });
 }
+function swapCurrency() {
+  const temp = currencyOne.value;
+  currencyOne.value = currencyTwo.value;
+  currencyTwo.value = temp;
+  calculate();
+}
+
 //  EventListeners
 
 currencyOne.addEventListener("change", calculate);
 amountOne.addEventListener("input", calculate);
 currencyTwo.addEventListener("change", calculate);
 amountTwo.addEventListener("input", calculate);
+
+swapBtn.addEventListener("click", swapCurrency);
