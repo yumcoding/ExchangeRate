@@ -17,6 +17,7 @@ function calculate() {
       console.log(data);
       const rate = data.rates[currencyTwoValue];
       rateDiv.innerHTML = `1 ${currencyOneValue} = ${rate} ${currencyTwoValue} `;
+      amountTwo.value = (amountOne.value * rate).toFixed(2);
     });
 }
 //  EventListeners
